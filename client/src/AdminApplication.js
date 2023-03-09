@@ -2,7 +2,7 @@ import CreateUserAccount from "./components/CreateUserAccount.js"
 import ViewUserAccounts from "./components/ViewUserAccounts.js"
 import ViewOrders from './components/ViewOrders.js'
 import { useState} from "react"
-import "./App.css"
+import "./css/App.css"
 
 function AdminApp(props){  
     const [userConfigShow, setUserConfigShow] = useState(false)
@@ -12,7 +12,7 @@ function AdminApp(props){
         <>
             <div class="container dashboard-container text-end">
                 <button type="button" onClick={() => setUserConfigShow(true)} class="btn btn-primary rounded-pill fw-bold mt-5 mb-5 ps-3 pe-3">
-                    User Settings
+                    User Accounts
                 </button>
                 <ViewUserAccounts 
                     show={userConfigShow}

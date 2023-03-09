@@ -1,9 +1,8 @@
+import OrderStatus from '../constants/OrderStatus.js'
+import ViewOrderDetails from './ViewOrderDetails.js'
 import Button from 'react-bootstrap/Button'
 import Table from 'react-bootstrap/Table'
 import React, {useState} from 'react'
-
-import ViewOrderDetails from './ViewOrderDetails.js'
-import OrderStatus from '../constants/OrderStatus.js'
 
 function TrackOrders(props){
   const [detailsShow, setDetailsShow] = useState(false)

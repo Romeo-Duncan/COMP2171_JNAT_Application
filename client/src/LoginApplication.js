@@ -5,8 +5,8 @@ import {BrowserRouter as Router, Route, Routes, Navigate} from 'react-router-dom
 import {useState} from 'react'
 import AdminApplication from './AdminApplication.js'
 import logo from "./assets/logo.svg"
-import "./LoginApp.css"
-import "./App.css"
+import "./css/LoginApp.css"
+import "./css/App.css"
 
 function LoginComponent(props){
   const [isLoginInfoWrong, setIsLoginInfoWrong] = useState(false)
@@ -21,7 +21,6 @@ function LoginComponent(props){
     setIsPasswordEmpty(password.length > 0)
     setIsLoginInfoWrong(false)
   }
-
   function onLogInRequested(){
       const username = document.getElementById("username-field").value
       const password = document.getElementById("password-field").value  
@@ -84,7 +83,6 @@ function LoginComponent(props){
     </>   
   )
 }
-
 function LogoutComponent(props){
   return (
     <>
@@ -103,8 +101,7 @@ function LogoutComponent(props){
     </>
   )
 }
-
-function LoginApp() {
+function LoginApplication() {
   const [userType, setUserType] = useState(sessionStorage.getItem("userType") || null)
   const [userId, setUserId] = useState(sessionStorage.getItem("userId") || null)
 
@@ -133,4 +130,4 @@ function LoginApp() {
     </Router>
   )
 }
-export default LoginApp;
+export default LoginApplication;

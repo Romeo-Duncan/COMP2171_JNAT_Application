@@ -2,7 +2,6 @@ import ProductService from '../Services/ProductService.js'
 import React, {useState, useEffect} from 'react'
 import ProductEntry from './ProductEntry.js'
 
-const defaultCategory = "All"
 function ViewProducts(props) {
     const [productData, setProductData] = useState([])
     useEffect(() => {

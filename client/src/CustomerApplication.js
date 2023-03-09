@@ -6,7 +6,7 @@ import ViewProducts from './components/ViewProducts.js'
 import ShoppingCart from './components/ShoppingCart.js'
 import TrackOrders from './components/TrackOrders.js'
 import "bootstrap-icons/font/bootstrap-icons.css"
-import "./App.css"
+import "./css/App.css"
 
 const tabs = {
     viewProducts : 1,

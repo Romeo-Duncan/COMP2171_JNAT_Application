@@ -1,8 +1,7 @@
-import { useState } from 'react'
+import UserService from '../Services/UserService.js'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
-
-import UserService from '../Services/UserService.js'
+import { useState } from 'react'
 
 function CreateUserAccount(props){
     const [isFormCompleted, setIsFormCompleted] = useState(false)

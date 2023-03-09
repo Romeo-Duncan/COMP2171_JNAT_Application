@@ -1,12 +1,10 @@
 import UserService from '../Services/UserService.js'
-
 import { useState, useEffect } from 'react'
 import Button from 'react-bootstrap/Button'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Popover from 'react-bootstrap/Popover'
 import Badge from 'react-bootstrap/Badge'
 import Modal from 'react-bootstrap/Modal'
-
 import UserIcon from "../icons/user-icon.js"
 import "../css/ViewUserAccounts.css"
 

@@ -1,8 +1,7 @@
+import OrderConfirmation from './OrderConfirmation.js'
 import Badge from 'react-bootstrap/esm/Badge'
 import Button from 'react-bootstrap/Button'
 import React, {useState} from 'react'
-
-import OrderConfirmation from './OrderConfirmation.js'
 
 function ShoppingCart(props){
     const [confirmationShow, setConfirmationShow] = useState(false)
