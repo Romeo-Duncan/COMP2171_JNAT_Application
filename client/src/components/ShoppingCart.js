@@ -1,3 +1,4 @@
+import OrderService from '../Services/OrderService.js'
 import OrderConfirmation from './OrderConfirmation.js'
 import Badge from 'react-bootstrap/esm/Badge'
 import Button from 'react-bootstrap/Button'
@@ -76,7 +77,14 @@ function ShoppingCart(props){
                 show={confirmationShow}
                 onHide={() => setConfirmationShow(false)}
                 onConfirmed = {() => {
+                    const orderData = props.cartData.map(item =>{
+                        return {
+                            itemId : item.ItemId,
+                            quantity : item.Quantity
+                        }
+                    })
                     setConfirmationShow(false)
+                    OrderService.createOrder(props.userId, orderData)
                     props.onOrderPlaced()                    
                 }}
             />

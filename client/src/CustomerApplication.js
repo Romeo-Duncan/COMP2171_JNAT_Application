@@ -43,7 +43,6 @@ function CustomerApp(props){
         setCartData(newCartData)
         sessionStorage.setItem("cartData", JSON.stringify(newCartData))
     }
-    
     useEffect(() => {      
         OrderService.getCustOrders(props.userId).then((customerOrderData) => {
             if (customerOrderData)
@@ -119,26 +118,17 @@ function CustomerApp(props){
                         />
                         ||
                         <ShoppingCart 
-                            cartData={cartData}
-                            onItemRemoved={(removeIndex)=>{
+                            cartData = {cartData}
+                            onItemRemoved = {(removeIndex)=>{
                                 const newCartData = cartData.filter((_, index) => {
                                     return index != removeIndex
                                 })
-
                                 updateCartData(newCartData)
                             }}
-                            onOrderPlaced={
-                                ()=> {
-                                    const orderData = cartData.map(item =>{
-                                        return {
-                                            itemId : item.ItemId,
-                                            quantity : item.Quantity
-                                        }
-                                    })
-                                    OrderService.createOrder(props.userId, orderData)
-                                    updateCartData([])
-                                }
-                            }
+                            onOrderPlaced = {()=> {                                    
+                                updateCartData([])
+                            }}
+                            userId = {props.userId}
                         />
                     }
                 </div>

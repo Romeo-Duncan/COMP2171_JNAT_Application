@@ -5,7 +5,7 @@ import ProductEntry from './ProductEntry.js'
 function ViewProducts(props) {
     const [productData, setProductData] = useState([])
     useEffect(() => {
-        ProductService.getProducts().then((productData) => {
+        ProductService.getProductDetails().then((productData) => {
             if (productData) 
                 setProductData(productData)            
         })
