@@ -33,9 +33,7 @@ function createAppRoutes(){
     app.post("/api/get-users-data", createRequestCallback(UserController.onGetUsersDataRequest))
     app.post("/api/create-user", createRequestCallback(UserController.onCreateUserRequest))
     app.post("/api/log-in", createRequestCallback(UserController.onLoginRequest))
-
     app.post("/api/get-items", createRequestCallback(ProductController.onGetItemsRequest))
-
     app.post("/api/create-order", createRequestCallback(OrderController.onCreateOrderRequest))
     app.post("/api/get-cust-orders", createRequestCallback(OrderController.onGetCustOrdersRequest))
     app.post("/api/get-all-orders", createRequestCallback(OrderController.onGetAllOrdersRequest))
