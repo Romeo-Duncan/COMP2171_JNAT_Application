@@ -1,4 +1,4 @@
-import UserService from '../Services/UserService.js'
+import UserService from '../Service/UserService.js'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import { useState } from 'react'

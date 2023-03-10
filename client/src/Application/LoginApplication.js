@@ -1,12 +1,12 @@
-import UserService from './Services/UserService.js'
+import UserService from '../Service/UserService.js'
 import EmployeeApplication from './EmployeeApplication.js'
 import CustomerApplication from './CustomerApplication.js'
 import {BrowserRouter as Router, Route, Routes, Navigate} from 'react-router-dom'
 import {useState} from 'react'
 import AdminApplication from './AdminApplication.js'
-import logo from "./assets/logo.svg"
-import "./css/LoginApp.css"
-import "./css/App.css"
+import logo from "../assets/logo.svg"
+import "../css/LoginApp.css"
+import "../css/App.css"
 
 function LoginComponent(props){
   const [isLoginInfoWrong, setIsLoginInfoWrong] = useState(false)

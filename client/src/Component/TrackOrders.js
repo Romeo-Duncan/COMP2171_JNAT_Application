@@ -1,42 +1,30 @@
-import OrderService from '../Services/OrderService.js'
+import OrderStatus from '../Constant/OrderStatus.js'
 import ViewOrderDetails from './ViewOrderDetails.js'
-import React, {useState, useEffect} from 'react'
 import Button from 'react-bootstrap/Button'
 import Table from 'react-bootstrap/Table'
+import React, {useState} from 'react'
 
-function ViewOrders() {
+function TrackOrders(props){
   const [detailsShow, setDetailsShow] = useState(false)
   const [orderDetails, setOrderDetails] = useState([]) 
-  const [orderData, setOrderData] = useState([])  
+  const orderData = props.trackingData || []
   
-  useEffect(() => {
-      OrderService.getAllOrders().then((orderData) => {
-          if (orderData){
-              console.log(orderData)
-              setOrderData(orderData)
-          }
-      })
-  }, [])
-
-  return (
+  return(
     <>
-      <div class="text-start fs-2 mb-5">
-        Customer Orders:
-      </div>
-      {
+        {
             orderData.length == 0
             &&
-            <div class="mt-3 fw-light fs-5 text-start">
-              NO ORDERS TO DISPLAY
+            <div class="mt-3 fw-light fs-4">
+                YOU HAVE NO ORDERS TO TRACK
             </div>
             ||
-            <div class = "text-start">
+            <>
               <Table responsive striped bordered hover>
                   <thead>
                       <tr>
                       <th class="fw-bolder">Tracking Number </th>
                       <th class="fw-bolder">Date Placed</th>
-                      <th class="fw-bolder">Customer</th>
+                      <th class="fw-bolder">Status</th>
                       </tr>
                   </thead>
                   <tbody>
@@ -46,7 +34,7 @@ function ViewOrders() {
                                   <tr>
                                       <td class="fw-light">{order.orderId}</td>
                                       <td class="fw-light">{(new Date(order.time)).toLocaleString()}</td>
-                                      <td class="fw-light">{order.customerData[0].username}</td>
+                                      <td class="fw-light">{OrderStatus[order.status]}</td>
                                       <td>
                                           <Button 
                                               variant='primary rounded-pill fw-bold'
@@ -65,7 +53,7 @@ function ViewOrders() {
                       }  
                   </tbody>
               </Table>
-            </div>
+            </>
         }           
         <div/>
         <ViewOrderDetails
@@ -74,6 +62,6 @@ function ViewOrders() {
             orderDetails={orderDetails}
         />
     </>
-  )
+)
 }
-export default ViewOrders
+export default TrackOrders

@@ -1,8 +1,8 @@
-import CreateUserAccount from "./components/CreateUserAccount.js"
-import ViewUserAccounts from "./components/ViewUserAccounts.js"
-import ViewOrders from './components/ViewOrders.js'
+import CreateUserAccount from "../Component/CreateUserAccount.js"
+import ViewUserAccounts from "../Component/ViewUserAccounts.js"
+import ViewOrders from '../Component/ViewOrders.js'
 import { useState} from "react"
-import "./css/App.css"
+import "../css/App.css"
 
 function AdminApp(props){  
     const [userConfigShow, setUserConfigShow] = useState(false)

@@ -4,9 +4,9 @@ import Mongodb from "mongodb"
 import Dotenv from "dotenv"
 import Cors from "cors"
 
-import ProductController from "./controllers/ProductController.js"
-import OrderController from "./controllers/OrderController.js"
-import UserController from "./controllers/UserController.js"
+import ProductController from "./Controller/ProductController.js"
+import OrderController from "./Controller/OrderController.js"
+import UserController from "./Controller/UserController.js"
 
 Dotenv.config()
 

@@ -1,5 +1,5 @@
 import BaseController from "./BaseController.js"
-import UserDataAccessObject from "../daos/UserDataAccessObject.js"
+import UserDataAccessObject from "../DataAccessObject/UserDataAccessObject.js"
 
 class UsersController extends BaseController{
     async onLoginRequest(req, res){

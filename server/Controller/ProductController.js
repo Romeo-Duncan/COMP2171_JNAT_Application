@@ -1,5 +1,5 @@
 import BaseController from "./BaseController.js"
-import ProductDataAccessObject from "../daos/ProductDataAccessObject.js"
+import ProductDataAccessObject from "../DataAccessObject/ProductDataAccessObject.js"
 
 class ProductController extends BaseController{
     async onGetItemsRequest(_, res){

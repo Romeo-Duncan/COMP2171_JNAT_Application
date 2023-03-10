@@ -1,4 +1,4 @@
-import OrderService from '../Services/OrderService.js'
+import OrderService from '../Service/OrderService.js'
 import OrderConfirmation from './OrderConfirmation.js'
 import Badge from 'react-bootstrap/esm/Badge'
 import Button from 'react-bootstrap/Button'

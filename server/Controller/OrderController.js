@@ -1,5 +1,5 @@
 import BaseController from "./BaseController.js"
-import OrderDataAccessObject from "../daos/OrderDataAccessObject.js"
+import OrderDataAccessObject from "../DataAccessObject/OrderDataAccessObject.js"
 
 class OrderController extends BaseController{
     async onCreateOrderRequest(req, res){

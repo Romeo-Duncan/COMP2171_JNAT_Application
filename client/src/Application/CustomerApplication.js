@@ -1,12 +1,12 @@
-import OrderService from './Services/OrderService.js'
+import OrderService from '../Service/OrderService.js'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Button from 'react-bootstrap/Button'
 import { useState, useEffect } from "react"
-import ViewProducts from './components/ViewProducts.js'
-import ShoppingCart from './components/ShoppingCart.js'
-import TrackOrders from './components/TrackOrders.js'
+import ViewProducts from '../Component/ViewProducts.js'
+import ShoppingCart from '../Component/ShoppingCart.js'
+import TrackOrders from '../Component/TrackOrders.js'
 import "bootstrap-icons/font/bootstrap-icons.css"
-import "./css/App.css"
+import "../css/App.css"
 
 const tabs = {
     viewProducts : 1,

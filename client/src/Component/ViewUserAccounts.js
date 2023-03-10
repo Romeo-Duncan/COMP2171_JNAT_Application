@@ -1,4 +1,4 @@
-import UserService from '../Services/UserService.js'
+import UserService from '../Service/UserService.js'
 import { useState, useEffect } from 'react'
 import Button from 'react-bootstrap/Button'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
