@@ -1,7 +1,7 @@
 import HttpClient from "./httpClient.js";
 
 export default {
-    async getProducts(){
+    async getProductDetails(){
         return HttpClient.post("/get-items", null, "itemData")
     }
 }
