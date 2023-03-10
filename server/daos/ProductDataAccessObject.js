@@ -1,7 +1,7 @@
 import BaseDataAccessObject from "./BaseDataAccessObject.js"
 
 class ProductDataAccessObject extends BaseDataAccessObject {
-    async getItems(){
+    async getProductDetails(){
         const itemData = await this.collection.aggregate([
             { $sort : { Category : 1 } },            
             { $addFields: { ItemId : "$_id" } },
@@ -15,5 +15,4 @@ class ProductDataAccessObject extends BaseDataAccessObject {
         return itemData
     }
 }
-
 export default new ProductDataAccessObject("Inventory")

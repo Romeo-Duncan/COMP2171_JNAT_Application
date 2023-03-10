@@ -1,9 +1,9 @@
 import BaseController from "./BaseController.js"
 import ProductDataAccessObject from "../daos/ProductDataAccessObject.js"
 
-class InventoryController extends BaseController{
+class ProductController extends BaseController{
     async onGetItemsRequest(_, res){
-        ProductDataAccessObject.getItems().then((itemData) => {
+        ProductDataAccessObject.getProductDetails().then((itemData) => {
             res.json({
                 itemData : itemData
             })
@@ -11,4 +11,4 @@ class InventoryController extends BaseController{
     }
 }
 
-export default new InventoryController(ProductDataAccessObject)
+export default new ProductController(ProductDataAccessObject)
