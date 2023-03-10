@@ -4,7 +4,6 @@ import Mongodb from "mongodb"
 import Dotenv from "dotenv"
 import Cors from "cors"
 
-//Controllers
 import ProductController from "./controllers/ProductController.js"
 import OrderController from "./controllers/OrderController.js"
 import UserController from "./controllers/UserController.js"
@@ -27,15 +26,11 @@ function createAppRoutes(){
                 res.status(500).json({ error : err.message })
             }
         }
-    }
-
-   
+    }   
     app.post("/api/get-users-data", createRequestCallback(UserController.onGetUsersDataRequest))
     app.post("/api/create-user", createRequestCallback(UserController.onCreateUserRequest))
     app.post("/api/log-in", createRequestCallback(UserController.onLoginRequest))
-
     app.post("/api/get-items", createRequestCallback(ProductController.onGetItemsRequest))
-
     app.post("/api/create-order", createRequestCallback(OrderController.onCreateOrderRequest))
     app.post("/api/get-cust-orders", createRequestCallback(OrderController.onGetCustOrdersRequest))
     app.post("/api/get-all-orders", createRequestCallback(OrderController.onGetAllOrdersRequest))
