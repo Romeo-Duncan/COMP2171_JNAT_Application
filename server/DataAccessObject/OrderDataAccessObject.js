@@ -187,7 +187,7 @@ class OrderDataAccessObject extends BaseDataAccessObject {
                   status: {$first: "$status"},
                   customerData: {$first: "$customerData"},
                   employees: {$first: "$employees"},
-                  employeeData: {$first: "$employeeData"},
+                  assignedEmployeeData: {$first: "$employeeData"},
                   orderData: { $push: { $first: "$orderData" } }
                 }
             },

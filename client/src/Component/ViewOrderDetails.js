@@ -1,3 +1,4 @@
+import AssignEmployeeUI from './AssignEmployeeUI'
 import Modal from 'react-bootstrap/Modal'
 import Badge from 'react-bootstrap/Badge'
 
@@ -36,6 +37,7 @@ function ViewOrderDetails(props) {
                         </div>              
                     </div>
                     <hr class="mb-4"/>
+                    <div>
                     {
                         props.orderDetails.orderData.map(item => {
                             return(
@@ -58,29 +60,45 @@ function ViewOrderDetails(props) {
                             )
                         })
                     } 
-                    {
-                        props.orderDetails.employeeData &&
-                        <>
-                            <hr class="mb-4"/>
-                            <div>
-                                <span class="fw-bold">Assigned employees :</span>
-                                <span>
-                                    {
-                                        props.orderDetails.employeeData.map((employee, index) => {
-                                            return(
-                                                <>  
-                                                    <span> {employee.username}</span> 
-                                                    <span>{index+1 < props.orderDetails.employeeData.length && <>,</>}</span>                            
-                                                </>
-                                            )
-                                        })
-                                    } 
-                                </span>
-                            </div> 
-                        </>
-                    }
+                    </div>
+                    <>
+                        {
+                            props.orderDetails.employeeData &&
+                            <div class="row justify-content-between w-100 mx-auto mt-5">
+                                <div class="fs-6 fs-4 fw-bold mb-4">
+                                    Assigned Employees
+                                </div>
+                                <hr class="mb-4"/>
+                                <AssignEmployeeUI
+                                    employeeList={props.employeeList}
+                                    selectedEmployees={props.selectedEmployees}
+                                    onEmployeeSelected={props.onEmployeeSelected}
+                                    onEmployeeRemoved={props.onEmployeeRemoved}
+                                />
+                            </div>                        
+                        }
+                    </>
+                    <>
+                        {
+                            props.orderDetails.assignedEmployeeData && 
+                            <div class="row justify-content-between w-100 mx-auto mt-5">
+                                <div class="fs-6 fs-4 fw-bold mb-4">
+                                    Assigned Employees
+                                </div>
+                                <div>
+                                {
+                                    props.orderDetails.assignedEmployeeData.map((employeeData, index) => {
+                                        return (
+                                            <>{employeeData.username}{index < props.orderDetails.assignedEmployeeData.length-1 && <>, </> ||<>.</>}</> 
+                                        )
+                                    })
+                                }
+                                </div>
+                            </div>   
+                        }
+                    </>
                 </Modal.Body>
-                <Modal.Footer bsPrefix=' w-100 mb-3'/>
+                <Modal.Footer bsPrefix='mb-3 w-100'/>
             </Modal>   
         </>
     )
