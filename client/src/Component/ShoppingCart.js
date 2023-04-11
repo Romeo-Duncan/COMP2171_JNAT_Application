@@ -60,8 +60,7 @@ function ShoppingCart(props){
 
                                         <span class="ms-3 me-2">{item.Name}</span>
                                         <Badge bg="secondary fs-6 badge rounded-pill">x{item.Quantity}</Badge>
-                                    </div>
-                                    
+                                    </div>                                    
                                     <div class="col-6 d-flex justify-content-end">
                                         <div>
                                             ${item.Price * item.Quantity}

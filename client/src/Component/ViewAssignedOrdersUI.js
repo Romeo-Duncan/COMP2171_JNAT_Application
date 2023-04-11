@@ -41,7 +41,7 @@ function ViewAssignedOrdersUI(props){
                             <th class="fw-bold">Tracking Number </th>
                             <th class="fw-bold">Date Placed</th>
                             <th class="fw-bold">Customer</th>
-                            <th class="fw-bold">State</th>
+                            <th class="fw-bold">Status</th>
                             </tr>
                         </thead>
                         <tbody>

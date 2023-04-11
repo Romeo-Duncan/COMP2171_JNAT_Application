@@ -6,7 +6,7 @@ function ViewOrders(){
     const [assignedOrderData, setAssignedOrderData] = useState([])
     const [unassignedOrderData, setUnassignedOrderData] = useState([])
 
-    function updateOrderData(){
+    function loadOrderData(){
         OrderService.getAllOrders().then((orderData) => {
             if (orderData){
                 let newAssignedOrderData = []
@@ -26,7 +26,7 @@ function ViewOrders(){
     }
 
     useEffect(() => {
-        updateOrderData()
+        loadOrderData()
     }, [])
 
     return (
@@ -42,7 +42,7 @@ function ViewOrders(){
                     {
                         unassignedOrderData.length > 0 &&
                         <OrderListUI orderData={unassignedOrderData}
-                        updateOrderData={updateOrderData}
+                        updateOrderData={loadOrderData}
                         heading="UNASSIGNED ORDERS"
                         />
                     }
@@ -51,7 +51,7 @@ function ViewOrders(){
                         <>
                             <hr class="mt-5 mb-5"/>
                             <OrderListUI orderData = {assignedOrderData}
-                            updateOrderData={updateOrderData}
+                            updateOrderData={loadOrderData}
                             />
                         </>                        
                     }

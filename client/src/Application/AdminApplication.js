@@ -6,8 +6,7 @@ import "../css/App.css"
 
 function AdminApp(props){  
     const [userConfigShow, setUserConfigShow] = useState(false)
-    const [createUserShow, setCreateUserShow] = useState(false)  
-
+    const [createUserShow, setCreateUserShow] = useState(false) 
     return(
         <>
             <div class="container dashboard-container text-end">

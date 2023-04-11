@@ -13,8 +13,8 @@ function OrderListUI(props) {
     const [orderDetails, setOrderDetails] = useState([])
     const [selectedEmployees, setSelectedEmployees] = useState([])
     const [employeeList, setEmployeeList] = useState([])
-        
-    useEffect(()=>{
+
+    function loadEmployeeAccounts(){
         UserService.getUserData().then((data) => {
             if (!data.userData) 
                 return
@@ -23,6 +23,9 @@ function OrderListUI(props) {
             })
             setEmployeeList(newEmployeeList)
         })
+    }
+    useEffect(()=>{
+       loadEmployeeAccounts()
     }, [])
 
     return (
@@ -36,7 +39,7 @@ function OrderListUI(props) {
                     <th class="fw-bold">Tracking Number </th>
                     <th class="fw-bold">Date Placed</th>
                     <th class="fw-bold">Customer</th>
-                    <th class="fw-bold">State</th>
+                    <th class="fw-bold">Status</th>
                     </tr>
                 </thead>
                 <tbody>

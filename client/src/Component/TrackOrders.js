@@ -3,10 +3,11 @@ import ViewOrderDetails from './ViewOrderDetails.js'
 import Button from 'react-bootstrap/Button'
 import Table from 'react-bootstrap/Table'
 import React, {useState} from 'react'
+import OrderService from '../Service/OrderService.js'
 
 function TrackOrders(props){
   const [detailsShow, setDetailsShow] = useState(false)
-  const [orderDetails, setOrderDetails] = useState([]) 
+  const [selectedOrder, setSelectedOrder] = useState([]) 
   const orderData = props.trackingData || []
   
   return(
@@ -35,17 +36,27 @@ function TrackOrders(props){
                                       <td class="fw-light">{order.orderId}</td>
                                       <td class="fw-light">{(new Date(order.time)).toLocaleString()}</td>
                                       <td class="fw-light">{OrderStatus[order.status]}</td>
-                                      <td>
+                                      <td class="text-center">
                                           <Button 
                                               variant='primary rounded-pill fw-bold'
                                               onClick={() => {
-                                                  console.log(order)
-                                                  setOrderDetails(order)
-                                                  setDetailsShow(true)
+                                                    setSelectedOrder(order)
+                                                    setDetailsShow(true)
                                               }}                       
                                           >
                                               View
-                                          </Button>  
+                                          </Button>
+                                          {
+                                            order.status == 0 && 
+                                            <Button 
+                                            variant='danger rounded-pill fw-bold ms-2'
+                                            onClick={() => {
+                                                OrderService.updateOrderStatus(order.orderId, 3)
+                                            }}                       
+                                            >
+                                                Cancel
+                                            </Button> 
+                                          }                                          
                                       </td>
                                   </tr>
                               )
@@ -59,7 +70,7 @@ function TrackOrders(props){
         <ViewOrderDetails
             show={detailsShow}
             onHide={() => setDetailsShow(false)}
-            orderDetails={orderDetails}
+            orderDetails={selectedOrder}
         />
     </>
 )

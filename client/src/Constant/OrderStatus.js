@@ -1,3 +1,3 @@
 export default [
-    "Being Prepared", "In Transit", "Delivered"
+    "Being Prepared", "In Transit", "Delivered", "Cancelled"
 ]
